@@ -13,15 +13,15 @@ public static void main (String [ ] args){
 
         System.out.print("Anual Interest Rate:");
         double rate = scanner.nextDouble();
-        double result1 = rate / 100.0;
-        double result2 = result1 / 12.0;
+        double rateResult = rate / 100.0;
+        double rateMonths = rateResult / 12.0;
 
         System.out.print("Period (Years):");
         int years = scanner.nextInt();
         years = years * 12;
 
 
-        double payments = (result2 * principal) / (1 - Math.pow(1 + result2, -years));
+        double payments = (rateMonths * principal) / (1 - Math.pow(1 + rateMonths, -years));
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         String result = currency.format(payments);
         System.out.println("Monthly Payments:"+ result);
